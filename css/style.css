@@ -2,7 +2,10 @@
 :root {
     --bg-color: #f7f7f7;
     --primary-steel-blue: #4682b4;
+    --light-blue: #38bdf8;
     --card-color: #a1c3ff;
+    --light-grey-color: #d3d3d3;
+    /* --light-grey-color: #edf2f8; */
     --secondary-color: #015;
      --dark-blue: #0f172a; 
     --hover-color: #0151cc;
@@ -164,6 +167,95 @@ span {
 
 /* About Page */
 .about {
+    margin-top: 2rem;
     background-color: var(--dark-blue);
     color: white;
+    /* text-align: center; */
+    padding: 50px 15px;
+    
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    border-left: 3px solid white;
+    /* border-right: 3px dashed white; */
+    padding: 0 1rem;
+    letter-spacing: 1px;
+    display: inline-block; /*wrap content*/
+    margin-bottom: 40px;
+}
+  
+
+
+.inner-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* background-color: #0151cc; */
+    gap: 40px;
+    align-items: start;
+}
+
+.about-intro p {
+    margin-top: 20px;
+    line-height: 1.7;
+
+}
+
+.about-highlights h2 {
+    position: relative; 
+    font-size: 2rem;
+    color: var(--light-blue);
+    margin-bottom: 20px;
+    display: inline-block; 
+}
+
+/* Bottom line */
+.about-highlights h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;  
+    left: 0;
+    width: 90px;            
+    height: 1px;            
+    background-color: var(--primary-steel-blue);
+    border-radius: 2px; 
+}
+
+
+.about-highlights ul{
+    list-style-type: circle; 
+}
+.about-highlights li {
+    margin-bottom: 20px;
+}
+
+.services-cta {
+    margin-top: 20px;
+    background-color: var(--primary-steel-blue);
+    border-radius: 8px;
+    display: inline-block;
+    padding: 15px 20px;
+    transition: 0.3s ease-in;
+}
+.services-cta:hover {
+    transform: scale(1.08);
+}
+
+.services-cta a {
+    text-decoration: none;
+    color: white; 
+}
+
+.services-cta i {
+    vertical-align: middle;
+}
+
+/* Services Page */
+.services {
+    background-color: var(--light-grey-color);
+    color: var(--txt-color);
+    text-align: center;
+    padding: 50px 15px;
+    
 }

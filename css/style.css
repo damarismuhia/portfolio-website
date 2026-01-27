@@ -322,7 +322,7 @@ span {
     border-radius: 1px; 
 }
 .services p {
-    margin-top: 20px;
+    margin: 20px 0px 30px 0px;
     font-weight: 400;
     font-size: 1rem;
 }
@@ -337,9 +337,19 @@ span {
   100% { transform: translateY(0); }
 }
 
+.services-grid {    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+    
+    
+
+}
+
 .service-card {
     background: linear-gradient(135deg, var(--card-color), var(--shadow-color));
-    border-radius: 20px; /* rounded corners */
+    border-radius: 20px; 
     padding: 30px 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -363,6 +373,10 @@ span {
 .service-card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 20px 40px #00000040;
+}
+
+.service-img {
+    border-radius: 50%;
 }
 
 

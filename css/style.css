@@ -260,7 +260,7 @@ span {
     margin-bottom: 20px;
 }
 
-.services-cta {
+.cta-skills {
     margin-top: 20px;
     background-color: var(--primary-steel-blue);
     border-radius: 8px;
@@ -268,28 +268,28 @@ span {
     padding: 15px 20px;
     transition: 0.3s ease-in;
 }
-.services-cta:hover {
+.cta-skills:hover {
     transform: scale(1.08);
 }
 
-.services-cta a {
+.cta-skills a {
     text-decoration: none;
     color: white; 
 }
 
-.services-cta i {
+.cta-skills i {
     vertical-align: middle;
 }
 
-/* Services Page */
-.services {
+/* Skills Page */
+.skill {
     background-color: var(--light-grey-color);
     color: var(--txt-color);
     text-align: center;
     padding: 50px 15px;
 }
 
-.services h2 {
+.skill h2 {
     font-weight: 600;
     font-size: 2rem;
     color: var(--primary-steel-blue);
@@ -298,7 +298,7 @@ span {
 }
 
 /* Bottom line */
-.services h2::after {
+.skill h2::after {
     content: "";
     position: absolute;
     bottom: 0px;  
@@ -310,7 +310,7 @@ span {
     border-radius: 1px; 
 }
 
-.services h2::before {
+.skill h2::before {
     content: "";
     position: absolute;
     bottom: -4px;  
@@ -321,7 +321,7 @@ span {
     background-color: var(--primary-steel-blue);
     border-radius: 1px; 
 }
-.services p {
+.skill p {
     margin: 20px 0px 30px 0px;
     font-weight: 400;
     font-size: 1rem;
@@ -337,7 +337,7 @@ span {
   100% { transform: translateY(0); }
 }
 
-.services-grid {    
+.skill-grid {    
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -347,10 +347,13 @@ span {
 
 }
 
-.service-card {
-    background: linear-gradient(135deg, var(--card-color), var(--shadow-color));
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    /* background: linear-gradient(135deg, var(--card-color), var(--shadow-color)); */
+    background: linear-gradient(180deg, transparent, #a1c3ff71);
     border-radius: 20px; 
-    padding: 30px 20px;
+    padding: 15px 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -358,27 +361,100 @@ span {
 }
 
 /* Diagonal top accent */
-.service-card::before {
+.skill-card::before {
     content: "";
     position: absolute;
     top: 10;
     left: -100%;
     width: 200%;
     height: 10px;
-    background: #ffffff4d;
+    background: #a1c3ff3f;
     transform: rotate(-23deg);
 }
 
+/*Background Animation*/
+.skill-card::after {
+    content: "\f370";
+    font-family: "Font Awesome 6 Brands";
+    font-size: 120px;
+    color: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: -30%;
+    /* start slightly above the card */
+    left: -30%;
+    /* start slightly left */
+    z-index: 0;
+    /* behind content */
+    pointer-events: none;
+    animation: moveDiagonal 10s linear infinite; /* calls the keyframes animation */
+}
+
+/* Main content stays above */
+.skill-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Diagonal movement keyframes */
+@keyframes moveDiagonal {
+    0% {
+        top: -30%;
+        left: -30%;
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        top: 60%;
+        left: 60%;
+        transform: rotate(180deg) scale(1.05);
+    }
+
+    100% {
+        top: -30%;
+        left: -30%;
+        transform: rotate(360deg) scale(1);
+    }
+}
+
 /* Hover effect */
-.service-card:hover {
+.skill-card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 20px 40px #00000040;
 }
-
-.service-img {
-    border-radius: 50%;
+.skill-card h3 {
+    color: var(--primary-steel-blue);
+    font-size: 600;
 }
 
+ 
+
+.skill-card i {
+    font-size: 4rem;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 8px;
+    margin: 0 20px;
+}
+
+.skill-card li {
+     display: flex; /*align text center */
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 8px;
+    text-align: center;
+    background-color: #0000000d;
+    border-radius: 5px;
+    border: 1px solid #a1c3ff61;
+    padding: 5px 8px;
+    word-break: break-word;
+    
+}
 
 
 

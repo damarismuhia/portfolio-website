@@ -353,7 +353,7 @@ span {
     /* background: linear-gradient(135deg, var(--card-color), var(--shadow-color)); */
     background: linear-gradient(180deg, transparent, #a1c3ff71);
     border-radius: 20px; 
-    padding: 15px 20px;
+    padding: 15px 20px 30px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -377,16 +377,13 @@ span {
     content: "\f370";
     font-family: "Font Awesome 6 Brands";
     font-size: 120px;
-    color: rgba(0, 0, 0, 0.05);
+    color: #a1c3ff3f;
     position: absolute;
-    top: -30%;
-    /* start slightly above the card */
-    left: -30%;
-    /* start slightly left */
+    top: -30%;/* starting position above the card */
+    left: -30%;/* start slightly left */
     z-index: 0;
-    /* behind content */
     pointer-events: none;
-    animation: moveDiagonal 10s linear infinite; /* calls the keyframes animation */
+    animation: moveDiagonal 12s linear infinite; /* calls the keyframes animation */
 }
 
 /* Main content stays above */
@@ -395,11 +392,17 @@ span {
     z-index: 1;
 }
 
-/* Diagonal movement keyframes */
+/** Diagonal movement keyframes
+*
+    - 0%=start of animation - icon starts off top-left
+    - 50%=midpoint (bottom-right)  - icon moves to bottom-right, rotates 180°, and slighrly scales us(1.05x)
+    - 100%=end of animation,loops back to start - icon returns to top-left, rotated 360° for a smooth loop
+
+ */
 @keyframes moveDiagonal {
     0% {
-        top: -30%;
-        left: -30%;
+        top: -40%;
+        left: -10%;
         transform: rotate(0deg) scale(1);
     }
 
@@ -411,7 +414,7 @@ span {
 
     100% {
         top: -30%;
-        left: -30%;
+        left: -10%;
         transform: rotate(360deg) scale(1);
     }
 }
@@ -436,9 +439,8 @@ span {
 
 .skill-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 8px;
-    margin: 0 20px;
 }
 
 .skill-card li {

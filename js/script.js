@@ -4,7 +4,7 @@ function populateSkillsSet() {
         {
             iconName: ['fa-brands', 'fa-apple'],
             skillName: '-Native iOS-',
-
+             bgImage: '/assets/images/xcode.png',
             skillsList : [
                 'Swift', 'UIKit' , 'SwiftUI', 'Combine', 'Async/Await', 'CoreData', 'Unit Testing'
 
@@ -14,7 +14,7 @@ function populateSkillsSet() {
         {
             iconName: ['fa-brands', 'fa-android'],
             skillName: '-Native Android-',
-
+             bgImage: '/assets/images/android-studio.png',
             skillsList : [
                 'Kotlin', 'Java' , 'Jetpack Compose', 'XML Layout', 'Jetpack Libraries', 'Unit Testing'
 
@@ -24,7 +24,7 @@ function populateSkillsSet() {
         {
             iconName: ['fa-solid', 'fa-laptop-code'],
             skillName: '-Web Development-', 
-
+             bgImage: '/assets/images/xcode.png',
             skillsList : [
                 'JavaScript', 'CSS' , 'HTML5', 'React', 'Unit Testing'
 
@@ -34,7 +34,7 @@ function populateSkillsSet() {
         {
             iconName: ['fa-solid', 'fa-screwdriver-wrench'],
             skillName: '-Tools & Automation-',
-
+             bgImage: '/assets/images/xcode.png',
             skillsList : [
                 'Xcode', 'Android Studio' , 'VS Code', 'Git', 'CI/CD(Github Actions & Fastlane)', 'Unit Testing'
 
@@ -57,6 +57,7 @@ function createDOMElementsForSkills(skill){
     const skillGrid = document.querySelector('.skill-grid')
     const skillDiv = document.createElement('div')
     skillDiv.classList.add('skill-card')
+    skillDiv.style.setProperty('--card-bg-image', `url(${skill.bgImage})`);
 
     const imgDiv = document.createElement('div');
     imgDiv.classList.add('skill-img-wrapper');

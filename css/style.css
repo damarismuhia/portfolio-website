@@ -281,7 +281,7 @@ span {
     vertical-align: middle;
 }
 
-/* Skills Page */
+/*MARK: Skills Page */
 .skill {
     background-color: var(--light-grey-color);
     color: var(--txt-color);
@@ -289,7 +289,7 @@ span {
     padding: 50px 15px;
 }
 
-.skill h2 {
+.section-title {
     font-weight: 600;
     font-size: 2rem;
     color: var(--primary-steel-blue);
@@ -298,7 +298,7 @@ span {
 }
 
 /* Bottom line */
-.skill h2::after {
+.section-title::after {
     content: "";
     position: absolute;
     bottom: 0px;  
@@ -310,7 +310,7 @@ span {
     border-radius: 1px; 
 }
 
-.skill h2::before {
+.section-title::before {
     content: "";
     position: absolute;
     bottom: -4px;  
@@ -373,17 +373,33 @@ span {
 }
 
 /*Background Animation*/
-.skill-card::after {
-    content: "\f370";
-    font-family: "Font Awesome 6 Brands";
+/**.skill-card::after {
+    /* "\f370" 
+    content: ''; 
+    /* font-family: "Font Awesome 6 Brands"; 
     font-size: 120px;
     color: #a1c3ff3f;
     position: absolute;
-    top: -30%;/* starting position above the card */
-    left: -30%;/* start slightly left */
+    top: -30%;/* starting position above the card 
+    left: -30%;/* start slightly left 
     z-index: 0;
     pointer-events: none;
-    animation: moveDiagonal 12s linear infinite; /* calls the keyframes animation */
+    animation: moveDiagonal 20s linear infinite; /* calls the keyframes animation 
+}
+**/
+
+.skill-card::after {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background-image: var(--card-bg-image);
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+    animation: moveDiagonal 12s linear infinite;
 }
 
 /* Main content stays above */
@@ -456,6 +472,15 @@ span {
     padding: 5px 8px;
     word-break: break-word;
     
+}
+
+
+/*MARK: Projects*/
+
+.project {
+    color: var(--txt-color);
+    text-align: center;
+    padding: 50px 15px;
 }
 
 

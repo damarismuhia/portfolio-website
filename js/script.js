@@ -24,7 +24,7 @@ function populateSkillsSet() {
         {
             iconName: ['fa-solid', 'fa-laptop-code'],
             skillName: '-Web Development-', 
-             bgImage: '/assets/images/xcode.png',
+             bgImage: '/assets/images/web.png',
             skillsList : [
                 'JavaScript', 'CSS' , 'HTML5', 'React', 'Unit Testing'
 
@@ -34,7 +34,7 @@ function populateSkillsSet() {
         {
             iconName: ['fa-solid', 'fa-screwdriver-wrench'],
             skillName: '-Tools & Automation-',
-             bgImage: '/assets/images/xcode.png',
+             bgImage: '/assets/images/tools.png',
             skillsList : [
                 'Xcode', 'Android Studio' , 'VS Code', 'Git', 'CI/CD(Github Actions & Fastlane)', 'Unit Testing'
 

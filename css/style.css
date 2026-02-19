@@ -4,13 +4,14 @@
     --primary-steel-blue: #4682b4;
     --light-blue: #38bdf8;
     --card-color: #a1c3ff;
+    --fade-blue:#a1c3ff25;
     --light-grey-color: #d3d3d3;
     /* --light-grey-color: #edf2f8; */
     --secondary-color: #015;
      --dark-blue: #0f172a; 
     --hover-color: #0151cc;
     --shadow-color: #00000099;
-    --txt-color: #292929
+    --txt-color: #292929;
 }
 *{
     box-sizing: border-box;
@@ -201,7 +202,7 @@ span {
     margin-top: 20px;
     line-height: 1.7;
 }
-.about-intro p:nth-of-type(1) span{
+.span-txt{
     background: linear-gradient(
     to right,
     var(--card-color),
@@ -491,69 +492,87 @@ span {
     display: grid;
     grid-template-columns: 2fr 2fr;
     padding: 8px;
+    overflow: clip;
 }
-/* .project-images{
+.project-card:hover {
+    border-color: var(--primary-steel-blue);
+    transition: border-color 0.3s ease;
+}
+
+.project-content{
     display: flex;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    background-color: #a1c3ff25;
-    padding: 16px;
-    
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 20px 0;
+    padding-left: 30px;
 }
-.project-images img {
-    width: 100%;
-    height: 500px;
-    object-fit:contain;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
-   
-    
+.gradient {
+    background: linear-gradient(
+        to right,
+        #015,
+        #4682b4);
+    background-clip: text;
+    color: transparent ;
+}
+.project-content h2 {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.project-content h5 {
+    color: #df3e3e;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.project-content p {
+    text-align: start;
+    line-height: 1.6;
+    padding: 0 0px 20px 0;
+}
+.console-btn {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.console-btn button {
+    padding: 15px ;
+    border-radius: 8px;
+
+    background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(to bottom, #38bdf8, #a1c3ff) border-box;
+
+    border: 1px solid transparent;
+
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+.console-btn button:hover {
+    background:
+            linear-gradient(to bottom, #38bdf8, #a1c3ff) border-box;
+        border: 1px solid transparent;
+    transform: scale(1.08);
+
+}
+
+/* .platform-img {
+    height: 24px;
+    text-align: center;
 } */
 
 
-
-/* .project-images {
-    position: relative;
-    height: 420px;
-    margin: 40px 0;
-}
-
-.project-images img {
-    position: absolute;
-    width: 70%;
-    border-radius: 30px;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 20px;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
-    transition: transform 0.4s ease;
-} 
-.project-images img:nth-child(1) {
-    top: 0;
-    left: 0;
-    transform: rotate(-18deg) translateX(-10px);
-    z-index: 1;
-} 
-.project-images img:nth-child(2) {
-    top: 40px;
-    left: 120px;
-    transform: rotate(6deg);
-    z-index: 2;
-}
-
-.project-images:hover img:nth-child(1) {
-    transform: rotate(-18deg) translateX(-30px);
-}
-
-.project-images:hover img:nth-child(2) {
-    transform: rotate(6deg) translateX(30px);
-}  */
-
 .project-images {
     position: relative;
-    perspective: 1200px;
-    width: 100%;
-    height: 420px;
-    margin: 40px 0;
+    perspective: 1400px;
+    width: 80%;
+    height: 550px;
+    margin: 35px 0;  
 }
 
 .project-images img {
@@ -564,45 +583,81 @@ span {
     box-shadow:
         0 30px 60px #00000059,
         0 10px 20px #00000033;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: center center;
 
-    transition: transform 0.6s ease;
+    
 }
-.project-images img:nth-child(1) {
+/**
+1. translateX() — move left / right.
+2. translateZ() — comes toward you / goes away from you -(translateZ only looks 3D if the parent has perspective.)
+3. translateY() — move up / down.
+*/
+
+.project-images-odd:nth-child(1) {
     top: 0;
     left: 50%;
     transform:
-        translateX(-60%) rotateY(-18deg) rotateX(6deg) translateZ(40px);
-    z-index: 1;
+        translateX(60%) rotateY(-18deg) rotateX(3deg) translateZ(40px);
+    z-index: 2;
 }
-.project-images img:nth-child(2) {
-    top: 40px;
-    left: 50%;
-    transform:
-        translateX(-20%) rotate(25deg) translateZ(-20px);
-    transform: rotate(6deg) translateX(30px);
-    z-index: 1;
-}  
 
- /* .project-images img:nth-child(1) {
-    transform:
-        rotateY(-18deg) rotateX(6deg) translateZ(40px);
+ .project-images-odd:nth-child(2) {
+    top: 10px;
+    left: 55%;
+    transform: translateX(-40%) rotateZ(-25deg) translateZ(-40px);
+    z-index: 1;
 } 
- .project-images img:nth-child(2) {
-        
-        transform: rotate(25deg);
-        z-index: -1;  */
-    /* transform: rotateY(12deg) rotateX(4deg) translateZ(10px) translateX(-40px); */
- /* }  */
 
-/* .project-images:hover img:nth-child(1) {
+/**Odd image hovering*/
+.project-images:hover .project-images-odd:nth-child(1) {
     transform:
-        rotateY(-12deg) rotateX(4deg) translateZ(60px);
+        translateX(50%) rotateY(-10deg)
+        rotateX(2deg) translateZ(80px) scale(1.05);
 }
 
-.project-images:hover img:nth-child(2) {
+.project-images:hover .project-images-odd:nth-child(2) {
+    top: 0;
+    transform: translateX(-80%) rotateY(10deg) rotateX(2deg) translateZ(80px) scale(1.03);
+} 
+
+
+/**Even*/
+.project-images-even:nth-child(1) {
+    top: 0;
     transform:
-        rotateY(8deg) rotateX(2deg) translateZ(30px) translateX(-20px);
-} */
+        translateX(-90%) rotateY(18deg) rotateX(-3deg) translateZ(40px);
+    z-index: 2;
+}
+.project-images-even:nth-child(2) {
+    top: 10px;
+    left: 55%;
+    transform: translateX(-20%) rotateZ(25deg) translateZ(-20px);
+    z-index: 1;
+}
+/**Even image hovering*/
+.project-images:hover .project-images-even:nth-child(1) {
+    top: 0;
+    transform: translateX(-90%) rotateY(10deg) rotateX(2deg) translateZ(80px) scale(1.03);
+}
+.project-images:hover .project-images-even:nth-child(2) {
+    top: 0;
+    transform:
+        translateX(20%) rotateY(-10deg)
+        rotateX(2deg) translateZ(80px)
+        scale(1.05);
+}
+
+    /* transform:
+        translateX(-60%)
+        rotateZ(-30deg)
+        translateZ(80px); */
+        
+
+
+
+
+
 
 
 

@@ -1,0 +1,67 @@
+[
+  {
+    "title": "BankiKuu Pay",
+    "platform": "Android | iOS",
+    "desc": "The Central Bank of Kenya <span>BankiKuu Pay</span> Mobile App is designed to provide employees of CBK with an efficient, user-friendly platform that streamlines payments and enhances efficiency. Tailored specifically for Central Bank of Kenya staff, the app offers a range of essential features to support your payments, keep you informed on your balances, and improve overall efficiency.",
+    "images": {
+      "imgClassList": "project-images-odd",
+      "img1": "../assets/images/cbk-success.png",
+      "img2": "../assets/images/cbk-home.png"
+    },
+    "isOdd": true,
+    "isBothPlatform": true,
+    "isGitHub": false
+  },
+  {
+    "title": "Flexipay Uganda",
+    "platform": "Android | iOS",
+    "desc": "The <span>Flexipay Wallet</span> is an all in one digital wallet solution that allows you to live free by making financial transactions convenient, safe, quick, secure, affordable and easy. It’s everything you’ve ever needed and more.<br>With the Flexipay Wallet, you can send and receive money on your phone from other Flexipay users at no charge, make bill payments with ease, link all your bank cards to the App, shop and pay multiple merchants for goods and services and earn rewards with loyalty program.<br>The Flexipay wallet also allows you to deposit or withdraw funds from multiple platforms that include Mobile Money, your bank account and Agent Banking.",
+    "images": {
+      "imgClassList": "project-images-even",
+      "img1": "../assets/images/ushuru-home.png",
+      "img2": "../assets/images/ushuru-landing.png"
+    },
+    "isOdd": false,
+    "isBothPlatform": true,
+    "isGitHub": false
+  },
+  {
+    "title": "Ushuru SACCO",
+    "platform": "iOS",
+    "desc": "<span>Ushuru SACCO</span> is a revamped Ushuru Sacco Mobile Banking Application. The application is a digital solution that offers Ushuru Sacco members an easy and convenient way of transacting at hand. Some of the services you can get in the solution include: Account Inquiries, Funds transfer, Loans, Bill Payments, Cash Deposit, Airtime Topup among others.",
+    "images": {
+      "imgClassList": "project-images-odd",
+      "img1": "../assets/images/ushuru-home.png",
+      "img2": "../assets/images/ushuru-landing.png"
+    },
+    "isOdd": true,
+    "isBothPlatform": false,
+    "isGitHub": false
+  },
+  {
+    "title": "CryptoRank",
+    "platform": "iOS",
+    "desc": "CryptoRank is a mobile application that provides cryptocurrency market insights including rankings, price tracking, and detailed asset information to help users make informed decisions.",
+    "images": {
+      "imgClassList": "project-images-even",
+      "img1": "../assets/images/crypto-home.png",
+      "img2": "../assets/images/crypto-details.png"
+    },
+    "isOdd": false,
+    "isBothPlatform": false,
+    "isGitHub": true
+  },
+  {
+    "title": "M-Selen",
+    "platform": "iOS",
+    "desc": "M-Selen is a mobile banking solution that offers users a convenient way to perform financial transactions including account inquiries, funds transfer, bill payments, and airtime top-up.",
+    "images": {
+      "imgClassList": "project-images-odd",
+      "img1": "../assets/images/crypto-home.png",
+      "img2": "../assets/images/crypto-details.png"
+    },
+    "isOdd": true,
+    "isBothPlatform": false,
+    "isGitHub": false
+  }
+]

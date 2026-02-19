@@ -1,55 +1,12 @@
 
-function populateSkillsSet() {
-     const skills =  [
-        {
-            iconName: ['fa-brands', 'fa-apple'],
-            skillName: '-Native iOS-',
-             bgImage: '/assets/images/xcode.png',
-            skillsList : [
-                'Swift', 'UIKit' , 'SwiftUI', 'Combine', 'Async/Await', 'CoreData', 'Unit Testing'
-
-            ]
-
-        },
-        {
-            iconName: ['fa-brands', 'fa-android'],
-            skillName: '-Native Android-',
-             bgImage: '/assets/images/android-studio.png',
-            skillsList : [
-                'Kotlin', 'Java' , 'Jetpack Compose', 'XML Layout', 'Jetpack Libraries', 'Unit Testing'
-
-            ]
-
-        },
-        {
-            iconName: ['fa-solid', 'fa-laptop-code'],
-            skillName: '-Web Development-', 
-             bgImage: '/assets/images/web.png',
-            skillsList : [
-                'JavaScript', 'CSS' , 'HTML5', 'React', 'Unit Testing'
-
-            ]
-
-        },
-        {
-            iconName: ['fa-solid', 'fa-screwdriver-wrench'],
-            skillName: '-Tools & Automation-',
-             bgImage: '/assets/images/tools.png',
-            skillsList : [
-                'Xcode', 'Android Studio' , 'VS Code', 'Git', 'CI/CD(Github Actions & Fastlane)', 'Unit Testing'
-
-            ]
-
-        }
-     ]
+async function populateSkillsSet() {
+     const res =  await fetch('./js/skills.json');
+     const skills = await res.json()
 
      skills.forEach ( (item) => {
         createDOMElementsForSkills(item)
 
-     })
-
-    
-    
+     }) 
 
 }
 
@@ -84,6 +41,85 @@ function createDOMElementsForSkills(skill){
     
 }
 
+async function populateProjectDeatils(){
+    const res =  await fetch('./js/project.json');
+    const projects = await res.json()
+    projects.forEach(project =>{
+        createProjectElement(project)
+    })
+}
+
+function createProjectElement(project){
+    const cardHolder = document.querySelector('.proj-card-holder');
+    const projectCard = document.createElement('div');
+    projectCard.classList.add('project-card');
+
+    const projDiv = document.createElement('div');
+    projDiv.classList.add('project-content');
+
+    const h2 = document.createElement('h2');
+    h2.classList.add('gradient')
+    h2.appendChild(document.createTextNode(project.title))
+    projDiv.appendChild(h2);
+
+    const h5 = document.createElement('h5');
+    h5.appendChild(document.createTextNode(`~ ${project.platform} ~`))
+    projDiv.appendChild(h5);
+
+    const p = document.createElement('p');
+    p.innerHTML = project.desc;
+    projDiv.appendChild(p);
+
+    const btnDiv = document.createElement('div');
+    btnDiv.classList.add('console-btn');
+
+    const appStoreBtn = createBtnWithIcon(['fa-brands', 'fa-app-store-ios'], ' View on AppStore') /**space on icon not possible on js hence array on icon classname */
+    const playStoreBtn = createBtnWithIcon(['fa-brands', 'fa-google-play'], ' View on PlayStore')
+    const gitHubBtn = createBtnWithIcon(['fa-brands', 'fa-github'], ' View on Github')
+    if(project.isBothPlatform){
+        btnDiv.appendChild(appStoreBtn);
+        btnDiv.appendChild(playStoreBtn);
+    }else {
+
+        btnDiv.appendChild(project.isGitHub ? gitHubBtn : (project.platform.tolowercase === 'ios' ? appStoreBtn : playStoreBtn));
+    }
+    projDiv.appendChild(btnDiv);
+
+    /**Images */
+    const imgDiv = document.createElement('div');
+    imgDiv.classList.add('project-images');
+
+    [project.images.img1, project.images.img2].forEach((src, index) => {
+        const img = document.createElement('img');
+        img.classList.add(project.images.imgClassList)
+        img.src = src;
+        img.alt = `${project.title} screen ${index + 1}`;
+        img.loading = 'lazy';
+        imgDiv.appendChild(img);
+    });
+
+    if(project.isOdd) {
+        projectCard.appendChild(projDiv);
+        projectCard.appendChild(imgDiv);
+    }else {
+        projectCard.appendChild(imgDiv);
+        projectCard.appendChild(projDiv);
+        
+    }
+    
+    
+    cardHolder.appendChild(projectCard);
+}
+
+function createBtnWithIcon(iconName, btnText){
+    const button = document.createElement('button');
+
+    const btnIcon = document.createElement('i')
+    btnIcon.classList.add(...iconName)
+    button.appendChild(btnIcon);
+    button.appendChild(document.createTextNode(btnText))
+    return button
+}
 
 
 
@@ -91,6 +127,7 @@ function createDOMElementsForSkills(skill){
 
 function init(){
     populateSkillsSet()
+    populateProjectDeatils();
 }
 
 document.addEventListener('DOMContentLoaded', init)

@@ -1,0 +1,54 @@
+[
+  {
+    "iconName": ["fa-brands", "fa-apple"],
+    "skillName": "-Native iOS-",
+    "bgImage": "/assets/images/xcode.png",
+    "skillsList": [
+      "Swift",
+      "UIKit",
+      "SwiftUI",
+      "Combine",
+      "Async/Await",
+      "CoreData",
+      "Unit Testing"
+    ]
+  },
+  {
+    "iconName": ["fa-brands", "fa-android"],
+    "skillName": "-Native Android-",
+    "bgImage": "/assets/images/android-studio.png",
+    "skillsList": [
+      "Kotlin",
+      "Java",
+      "Jetpack Compose",
+      "XML Layout",
+      "Jetpack Libraries",
+      "Unit Testing"
+    ]
+  },
+  {
+    "iconName": ["fa-solid", "fa-laptop-code"],
+    "skillName": "-Web Development-",
+    "bgImage": "/assets/images/web.png",
+    "skillsList": [
+      "JavaScript",
+      "CSS",
+      "HTML5",
+      "React",
+      "Unit Testing"
+    ]
+  },
+  {
+    "iconName": ["fa-solid", "fa-screwdriver-wrench"],
+    "skillName": "-Tools & Automation-",
+    "bgImage": "/assets/images/tools.png",
+    "skillsList": [
+      "Xcode",
+      "Android Studio",
+      "VS Code",
+      "Git",
+      "CI/CD (GitHub Actions & Fastlane)",
+      "Unit Testing"
+    ]
+  }
+]

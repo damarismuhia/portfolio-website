@@ -18,8 +18,8 @@
     "desc": "The <span>Flexipay Wallet</span> is an all in one digital wallet solution that allows you to live free by making financial transactions convenient, safe, quick, secure, affordable and easy. It’s everything you’ve ever needed and more.<br>With the Flexipay Wallet, you can send and receive money on your phone from other Flexipay users at no charge, make bill payments with ease, link all your bank cards to the App, shop and pay multiple merchants for goods and services and earn rewards with loyalty program.<br>The Flexipay wallet also allows you to deposit or withdraw funds from multiple platforms that include Mobile Money, your bank account and Agent Banking.",
     "images": {
       "imgClassList": "project-images-even",
-      "img1": "../assets/images/ushuru-home.png",
-      "img2": "../assets/images/ushuru-landing.png"
+      "img1": "../assets/images/flexi-home.png",
+      "img2": "../assets/images/flexi-slider.png"
     },
     "isOdd": false,
     "isBothPlatform": true,

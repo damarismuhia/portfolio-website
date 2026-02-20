@@ -654,7 +654,15 @@ span {
         translateZ(80px); */
         
 
-
+/**Contact*/
+.contact{
+    background: linear-gradient(to bottom, #a1c3ff25 60%, #38bff848);
+    text-align: center;
+    padding: 50px 15px;
+}
+.contact .section-title {
+    text-align: center;
+}
 
 
 

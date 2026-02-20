@@ -81,7 +81,7 @@ function createProjectElement(project){
         btnDiv.appendChild(playStoreBtn);
     }else {
 
-        btnDiv.appendChild(project.isGitHub ? gitHubBtn : (project.platform.tolowercase === 'ios' ? appStoreBtn : playStoreBtn));
+        btnDiv.appendChild(project.isGitHub ? gitHubBtn : appStoreBtn);
     }
     projDiv.appendChild(btnDiv);
 

@@ -121,6 +121,20 @@ function createBtnWithIcon(iconName, btnText){
     return button
 }
 
+function setUpUI() {
+    const copyright = document.querySelector('.copyright');
+    copyright.textContent = `© ${new Date().getFullYear()} | dmuhia. All right reserved.`
+
+    //MARK: FAB Arrow
+    const arrowUp = document.querySelector('.arrow-up');
+    onscroll = ()=> {
+        if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200){
+            arrowUp.classList.remove('hidden')
+        }else {
+            arrowUp.classList.add('hidden') 
+        }
+    }
+}
 
 
 
@@ -128,6 +142,9 @@ function createBtnWithIcon(iconName, btnText){
 function init(){
     populateSkillsSet()
     populateProjectDeatils();
+    
+    setUpUI()
+    
 }
 
 document.addEventListener('DOMContentLoaded', init)
